@@ -40,4 +40,4 @@
 
 ## 源码目录
 
-- pan-rpc-easy：pan RPC 框架简易版
+- dixon-rpc-easy：dixon RPC 框架简易版
