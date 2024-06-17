@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="example_common" />
         <module name="dixon_rpc_easy" />
+        <module name="example_provider" />
+        <module name="example_consumer" />
       </profile>
     </annotationProcessing>
   </component>

@@ -3,5 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/dixon_rpc_easy/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dixon_rpc_easy/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_consumer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/example_provider/src/main/resources" charset="UTF-8" />
   </component>
 </project>
