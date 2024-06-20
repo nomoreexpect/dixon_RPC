@@ -11,13 +11,13 @@ public interface UserService {
     /*
     *@Param [user]
     *@return com.dixon.example.commpn.model.User
-    *@Description:
+    *@Description: 获取用户
     */
     User getUser(User user);
 
     /**
      * 用于测试 mock 接口返回值
-     *
+     * 获取数字 1
      * @return
      */
     default short getNumber() {
