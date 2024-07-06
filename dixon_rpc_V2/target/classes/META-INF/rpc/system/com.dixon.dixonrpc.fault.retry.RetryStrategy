@@ -1,0 +1,2 @@
+no = com.dixon.dixonrpc.fault.retry.NoRetryStrategy
+fixedInterval=com.dixon.dixonrpc.fault.retry.FixedIntervalRetryStrategy

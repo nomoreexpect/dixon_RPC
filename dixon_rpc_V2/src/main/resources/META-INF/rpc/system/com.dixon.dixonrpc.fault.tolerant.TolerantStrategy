@@ -1,0 +1,4 @@
+failBack = com.dixon.dixonrpc.fault.tolerant.FailBackTolerantStrategy
+failFast = com.dixon.dixonrpc.fault.tolerant.FailFastTolerantStrategy
+failOver = com.dixon.dixonrpc.fault.tolerant.FailOverTolerantStrategy
+failSafe = com.dixon.dixonrpc.fault.tolerant.FailSafeTolerantStrategy

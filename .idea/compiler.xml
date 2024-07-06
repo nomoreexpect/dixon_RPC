@@ -8,11 +8,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="example_common" />
+        <module name="example-springboot-provider" />
         <module name="dixon_rpc_easy" />
-        <module name="dixon_rpc_V2" />
+        <module name="example-springboot-consumer" />
         <module name="example_provider" />
+        <module name="dixon-rpc-spring-boot-starter" />
+        <module name="dixon_rpc_V2" />
         <module name="example_consumer" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.6.13/589caa559deba4594e21ebf37f0c415a2cefe5fe/spring-boot-configuration-processor-2.6.13.jar" />
+        </processorPath>
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
 </project>

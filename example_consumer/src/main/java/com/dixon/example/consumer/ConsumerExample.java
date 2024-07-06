@@ -1,6 +1,7 @@
 package com.dixon.example.consumer;
 
 import cn.hutool.json.JSONUtil;
+import com.dixon.dixonrpc.bootstrap.ConsumerBootstrap;
 import com.dixon.dixonrpc.config.RpcConfig;
 import com.dixon.dixonrpc.proxy.ServiceProxyFactory;
 import com.dixon.dixonrpc.utils.ConfigUtils;
@@ -16,7 +17,8 @@ public class ConsumerExample {
     public static void main(String[] args) {
 //        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
 //        System.out.println(rpc);
-
+        //服务提供者初始化
+        ConsumerBootstrap.init();
         //获取代理
         UserService userService = ServiceProxyFactory.getProxy(UserService.class);
         User user = new User();
@@ -28,8 +30,8 @@ public class ConsumerExample {
         }else {
             System.out.println("user == null! ");
         }
-        long number = userService.getNumber();
-        System.out.println(number);
+//        long number = userService.getNumber();
+//        System.out.println(number);
     }
     
 

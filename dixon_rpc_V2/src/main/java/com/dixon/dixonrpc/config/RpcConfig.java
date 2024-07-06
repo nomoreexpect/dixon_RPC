@@ -1,7 +1,9 @@
 package com.dixon.dixonrpc.config;
 
 import com.dixon.dixonrpc.fault.retry.RetryStrategyKeys;
+import com.dixon.dixonrpc.loadbalancer.LoadBalancerKeys;
 import com.dixon.dixonrpc.serializer.SerializerKeys;
+import com.dixon.dixonrpc.fault.tolerant.TolerantStrategyKeys;
 import lombok.Data;
 
 
@@ -41,7 +43,7 @@ public class RpcConfig {
     /**
      * 负载均衡器
      */
-//    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
+    private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
 
     /**
      * 重试策略
@@ -51,7 +53,7 @@ public class RpcConfig {
     /**
      * 容错策略
      */
-//    private String tolerantStrategy = TolerantStrategyKeys.FAIL_FAST;
+    private String tolerantStrategy = TolerantStrategyKeys.FAIL_FAST;
 
     /**
      * 模拟调用
@@ -61,5 +63,5 @@ public class RpcConfig {
     /**
      * 注册中心配置
      */
-//    private RegistryConfig registryConfig = new RegistryConfig();
+    private RegistryConfig registryConfig = new RegistryConfig();
 }

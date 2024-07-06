@@ -1,0 +1,3 @@
+roundRobin=com.dixon.dixonrpc.loadbalancer.RoundRobinLoadBalancer
+random=com.dixon.dixonrpc.loadbalancer.RandomLoadBalancer
+consistentHash=com.dixon.dixonrpc.loadbalancer.ConsistentHashLoadBalancer

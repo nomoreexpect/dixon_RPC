@@ -1,0 +1,4 @@
+hessian=com.dixon.dixonrpc.serializer.HessianSerializer
+json=com.dixon.dixonrpc.serializer.JsonSerializer
+jdk=com.dixon.dixonrpc.serializer.JdkSerializer
+kryo=com.dixon.dixonrpc.serializer.KryoSerializer
