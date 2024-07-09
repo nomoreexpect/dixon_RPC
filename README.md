@@ -20,7 +20,6 @@
 （很多都是饼，尚未实现）
 - ⭐️ Vert.x 框架
 - ⭐️ Etcd 云原生存储中间件（jetcd 客户端）
-- ZooKeeper 分布式协调工具（curator 客户端）
 - ⭐️ SPI 机制
 - ⭐️ 多种序列化器
     - JSON 序列化
