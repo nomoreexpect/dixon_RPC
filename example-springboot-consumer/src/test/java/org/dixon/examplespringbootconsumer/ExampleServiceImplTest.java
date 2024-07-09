@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.annotation.Resource;
 
 @SpringBootTest
-class ExampleSpringbootConsumerApplicationTests {
+class ExampleServiceImplTest {
 
     @Resource
     private ExampleServiceImpl exampleService;
