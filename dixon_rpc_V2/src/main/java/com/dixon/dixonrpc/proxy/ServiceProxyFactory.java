@@ -5,7 +5,7 @@ import com.dixon.dixonrpc.RpcApplication;
 import java.lang.reflect.Proxy;
 
 /**
- * @Author:PanYa
+ * @Author: PanYa
  * @Date 2024/6/17-下午10:21
  * @Description:
  */

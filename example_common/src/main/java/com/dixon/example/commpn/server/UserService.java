@@ -10,7 +10,7 @@ import com.dixon.example.commpn.model.User;
 public interface UserService {
     /*
     *@Param [user]
-    *@return com.dixon.example.commpn.model.User
+    *@return com.dixon.example.common.model.User
     *@Description: 获取用户
     */
     User getUser(User user);
@@ -23,4 +23,10 @@ public interface UserService {
     default short getNumber() {
         return 1;
     }
+
+    default String getName() {return "yapan";}
+
+    default int getAge() {return 18;}
+
+    default User getUser() {return null;}
 }
