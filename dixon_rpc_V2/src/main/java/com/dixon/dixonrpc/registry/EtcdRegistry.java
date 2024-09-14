@@ -11,7 +11,6 @@ import com.dixon.dixonrpc.model.ServiceMetaInfo;
 import io.etcd.jetcd.*;
 import io.etcd.jetcd.ByteSequence;
 import io.etcd.jetcd.KV;
-import io.etcd.jetcd.kv.GetResponse;
 import io.etcd.jetcd.options.GetOption;
 import io.etcd.jetcd.options.PutOption;
 import io.etcd.jetcd.watch.WatchEvent;
@@ -19,8 +18,6 @@ import io.etcd.jetcd.watch.WatchEvent;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.HashSet;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -46,7 +43,7 @@ public class EtcdRegistry implements Registry{
      */
     private final Set<String> localRegisterNodeKeySet = new HashSet<>();
 
-    private final RegistryServiceCache registryServiceCache = new RegistryServiceCache();
+    private final RegistryServiceMultiCache registryServiceMultiCache = new RegistryServiceMultiCache();
 
     private final Set<String> watchingKeySet = new ConcurrentHashSet<>();
 
@@ -83,8 +80,10 @@ public class EtcdRegistry implements Registry{
     }
 
     public List<ServiceMetaInfo> serviceDiscovery(String serviceKey) {
-        // 优先从缓存获取服务
-        List<ServiceMetaInfo> cachedServiceMetaInfoList = registryServiceCache.readCache();
+        // 优先从缓存获取服务,源代码被注释，不支持多个服务同时缓存
+        //List<ServiceMetaInfo> cachedServiceMetaInfoList = registryServiceMultiCache.readCache();
+
+        List<ServiceMetaInfo> cachedServiceMetaInfoList = registryServiceMultiCache.readCache(serviceKey);
         if (cachedServiceMetaInfoList != null) {
             return cachedServiceMetaInfoList;
         }
@@ -115,7 +114,9 @@ public class EtcdRegistry implements Registry{
                     })
                     .collect(Collectors.toList());
             // 写入服务缓存
-            registryServiceCache.writeCache(serviceMetaInfoList);
+            // 原教程代码，不支持多个服务同时缓存
+            // registryServiceCache.writeCache(serviceMetaInfoList);
+            registryServiceMultiCache.writeCache(serviceKey, serviceMetaInfoList);
             return serviceMetaInfoList;
         } catch (Exception e) {
             throw new RuntimeException("获取服务列表失败", e);
@@ -154,6 +155,11 @@ public class EtcdRegistry implements Registry{
         CronUtil.start();
     }
 
+    /**
+     * 监听（消费端）
+     *
+     * @param serviceNodeKey
+     */
     public void watch(String serviceNodeKey) {
         Watch watchClient = client.getWatchClient();
         // 之前未被监听，开启监听
@@ -165,7 +171,8 @@ public class EtcdRegistry implements Registry{
                         // key 删除时触发
                         case DELETE:
                             // 清理注册服务缓存
-                            registryServiceCache.clearCache();
+                            //registryServiceMultiCache.clearCache();
+                            registryServiceMultiCache.clearCache(serviceNodeKey);
                             break;
                         case PUT:
                         default:

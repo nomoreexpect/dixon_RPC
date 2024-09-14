@@ -15,6 +15,7 @@ public interface UserService {
     */
     User getUser(User user);
 
+
     /**
      * 用于测试 mock 接口返回值
      * 获取数字 1
@@ -24,9 +25,9 @@ public interface UserService {
         return 1;
     }
 
-    default String getName() {return "yapan";}
-
-    default int getAge() {return 18;}
-
-    default User getUser() {return null;}
+//    default String getName() {return "yapan";}
+//
+//    default int getAge() {return 18;}
+//
+//    default User getUser() {return null;}
 }

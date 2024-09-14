@@ -35,10 +35,10 @@ public class ConsumerExample {
 //        long number = userService.getNumber();
 //        System.out.println(number);
 
-        int age = userService.getAge();
-        System.out.println(age);
-
-        String name = userService.getName();
-        System.out.println(name);
+//        int age = userService.getAge();
+//        System.out.println(age);
+//
+//        String name = userService.getName();
+//        System.out.println(name);
     }
 }
